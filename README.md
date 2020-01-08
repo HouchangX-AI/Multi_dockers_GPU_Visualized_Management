@@ -17,17 +17,17 @@ Make some work for managing GPU server in order to save time.
 ![avatar](info/static/gpu.png)
 #### 参数解释：
 表格中会显示显卡的一些信息，第一行是版本信息，第二行是标题栏，第三行就是具体的显卡信息了，如果有多个显卡，会有多行，每一行的信息值对应标题栏对应位置的信息。 
-* GPU：编号，这里是0和1
-* Fan：风扇转速，在0到100%之间变动，第一个是29% 
-* Name：显卡名，这里两块都是GeForce
-* Temp：显卡温度，第一个是60摄氏度 
+* GPU：编号，显示多卡的编号
+* Fan：风扇转速，在0到100%之间变动，
+* Name：显卡名
+* Temp：显卡温度 
 * Perf：性能状态，从P0到P12，P0性能最大，P12最小 
 * Persistence-M：持续模式的状态开关，该模式耗能大，但是启动新GPU应用时比较快，这里是off 
 * Pwr：能耗 
 * Bus-Id：GPU总线
 * Disp.A：表示GPU的显示是否初始化 
 * Memory-Usage：显存使用率
-* GPU-Util：GPU利用率，第一个是74%，第二个未用
+* GPU-Util：GPU利用率
 * Compute M.：计算模式
 
 需要注意的一点是显存占用率和GPU占用率是两个不一样的东西，类似于内存和CPU，两个指标的占用率不一定是互相对应的。
