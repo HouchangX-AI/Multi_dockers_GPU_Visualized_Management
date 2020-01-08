@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/layui/css/layui.css" media="all">
+</head>
+<body>
+
+
+<table class="layui-hide" id="test"></table>
+
+<script src="../static/layui/layui.js" charset="utf-8"></script>
+
+<script>
+    //Demo
+    layui.use('form', function () {
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            layer.msg(JSON.stringify(data.field));
+            return layer.msg(JSON.stringify(data.field));
+        });
+    });
+</script>
+<script>
+    layui.use('table', function () {
+        var table = layui.table;
+
+        table.render({
+            elem: '#test'
+            ,
+            url: '/source_data'
+            ,
+            cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            ,
+            cols: [[
+                {field: 'container', width: 200, title: '容器ID'}
+                , {field: 'name', width: 200, title: '用户名'}
+                , {field: 'memory_use', width: 200, title: '内存使用'}
+                , {field: 'memory_per', width: 200, title: '内存使用率', sort: true}
+                , {field: 'cpu', width: 200, title: 'cpu占用率', sort: true}
+                , {field: 'pid', width: 200, title: '进程数', sort: true}
+                , {field: 'diskio', width: 200, title: '磁盘I/O', sort: true}
+            ]]
+        });
+    });
+</script>
+</body>
+</html>
+

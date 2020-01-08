@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/layui/css/layui.css" media="all">
+</head>
+<body>
+<form class="layui-form" action="" method="post">
+    <div class="layui-input-block">
+        <h2>生成对应课程带参数的二维码</h2>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">课程名称</label>
+        <div class="layui-input-inline">
+            <input type="course" name="course" required lay-verify="required" placeholder="请输入课程名" autocomplete="off"
+                   class="layui-input">
+        </div>
+        <div class="layui-form-mid layui-word-aux">推文中设计的课程名称</div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">携带的参数</label>
+        <div class="layui-input-inline">
+            <input type="canshu" name="canshu" required lay-verify="required" placeholder="请输入str参数" autocomplete="off"
+                   class="layui-input">
+        </div>
+        <div class="layui-form-mid layui-word-aux">制定该课程携带的参数str</div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">无效框</label>
+        <div class="layui-input-block">
+            <input type="checkbox" name="like[write]" title="无奈">
+            <input type="checkbox" name="like[read]" title="无辜">
+            <input type="checkbox" name="like[dai]" title="发呆" checked>
+        </div>
+    </div>
+    <div class="layui-input-block">
+        <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+    </div>
+</form>
+
+<table class="layui-hide" id="test"></table>
+
+<script src="../static/layui/layui.js" charset="utf-8"></script>
+
+<script>
+    //Demo
+    layui.use('form', function () {
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            layer.msg(JSON.stringify(data.field));
+            return layer.msg(JSON.stringify(data.field));
+        });
+    });
+</script>
+<script>
+layui.use('table', function(){
+  var table = layui.table;
+
+  table.render({
+    elem: '#test'
+    ,url:'/wx_url/get_wechat_table'
+    ,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+    ,cols: [[
+      {field:'course', width:'10%', title: '课程名', sort: true}
+      ,{field:'canshu', width:'10%',  title: '参数'}
+      ,{field:'img_url', title: '图片url'}
+    ]]
+  });
+});
+</script>
+</body>
+</html>
+

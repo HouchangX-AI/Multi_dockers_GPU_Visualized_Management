@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/layui/css/layui.css" media="all">
+</head>
+<body>
+
+<div style="padding-right: 2em;padding-left: 2em">
+    <table class="layui-hide" id="test"></table>
+
+</div>
+
+<script src="../static/layui/layui.js" charset="utf-8"></script>
+
+<script>
+    //Demo
+    layui.use('form', function () {
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            layer.msg(JSON.stringify(data.field));
+            return layer.msg(JSON.stringify(data.field));
+        });
+    });
+</script>
+<script>
+    layui.use('table', function () {
+        var table = layui.table;
+
+        table.render({
+            elem: '#test'
+            ,
+            url: '/disk/detail'
+            ,
+            cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            ,
+            cols: [[
+                {field: 'container_id', title: '容器ID'}
+                , {field: 'image', title: '镜像name'}
+                , {field: 'command', title: '命令'}
+                , {field: 'local_volums', width: 200, title: '卷。。', sort: true}
+                , {field: 'sort_size', width: 200, title: '使用量排序用', sort: true}
+                , {field: 'size', width: 200, title: '使用量', sort: true}
+                , {field: 'created', width: 200, title: '创建时间', sort: true}
+                , {field: 'status', width: 200, title: '状态', sort: true}
+                , {field: 'names', title: '容器名'}
+            ]]
+        });
+    });
+</script>
+</body>
+</html>
+
