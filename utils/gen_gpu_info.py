@@ -15,7 +15,7 @@ mem_in_use = 0
 mem_all = 8 * 15079
 mem_dict = {}
 
-with open('rate.txt', 'r') as f:
+with open('/home/dc2-user/Multi_dockers_GPU_Visualized_Management/utils/rate.txt', 'r') as f:
     dict_str = f.read()
     res_dict = eval(dict_str)
 
@@ -37,7 +37,7 @@ now_time = str(datetime.datetime.now().strftime('%Y/%m/%d %H:%M'))
 
 res_dict[now_time] = mem_dict
 
-print(res_dict)
+# print(res_dict)
 
-with open('rate.txt', 'w') as f:
+with open('/home/dc2-user/Multi_dockers_GPU_Visualized_Management/utils/rate.txt', 'w') as f:
     f.write(str(res_dict))

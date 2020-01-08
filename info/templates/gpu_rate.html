@@ -9,7 +9,7 @@
 <body>
 
 <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-<div id="main2" style="width: 1600px;height:500px;margin: 0 auto;"></div>
+<div id="main2" style="width: 1600px;height:700px;margin: 0 auto;"></div>
 
 
 <script type="text/javascript">
@@ -44,8 +44,7 @@
             {
                 type: 'category',
                 boundaryGap: false,
-                data: ['6日', '7日', '8日', '9日', '10日', '11日', '12日', '13日', '14日', '15日', '16日', '17日', '18日',
-                    '19日', '20日', '21日', '22日', '23日', '24日', '25日', '26日', '27日', '28日', '29日', '30日']
+                data: {{ data.x_list|tojson }}
             }
         ],
         yAxis: [
@@ -58,9 +57,9 @@
         ],
         series: [
             {
-                name: '无人机课程',
+                name: 'GPU-1',
                 type: 'line',
-                data: {{ data.air1_y_value_list }},
+                data: {{ data.y_list_1|tojson }},
                 markPoint: {
                     data: [
                         {type: 'max', name: '最大值'},
@@ -74,9 +73,9 @@
                 }
             },
             {
-                name: 'AI基础课程',
+                name: 'GPU-2',
                 type: 'line',
-                data: {{ data.py1_y_value_list }},
+                data: {{ data.y_list_2|tojson }},
                 markPoint: {
                     data: [
                         {type: 'max', name: '最大值'},
@@ -90,9 +89,9 @@
                 }
             },
             {
-                name: 'AI进阶课程',
+                name: 'GPU-3',
                 type: 'line',
-                data: {{ data.ai5_y_value_list }},
+                data: {{ data.y_list_3|tojson }},
                 markPoint: {
                     data: [
                         {type: 'max', name: '最大值'},
@@ -106,9 +105,9 @@
                 }
             },
             {
-                name: 'AI资深课程',
+                name: 'GPU-4',
                 type: 'line',
-                data: {{ data.hc_y_value_list }},
+                data: {{ data.y_list_4|tojson }},
                 markPoint: {
                     data: [
                         {type: 'max', name: '最大值'},
@@ -119,6 +118,89 @@
                     data: [
                         {type: 'average', name: '平均值'}
                     ]
+                }
+            },
+            {
+                name: 'GPU-5',
+                type: 'line',
+                data: {{ data.y_list_5|tojson }},
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        //{type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine: {
+                    data: [
+                        {type: 'average', name: '平均值'}
+                    ]
+                }
+            },
+            {
+                name: 'GPU-6',
+                type: 'line',
+                data: {{ data.y_list_6|tojson }},
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        //{type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine: {
+                    data: [
+                        {type: 'average', name: '平均值'}
+                    ]
+                }
+            },
+            {
+                name: 'GPU-7',
+                type: 'line',
+                data: {{ data.y_list_7|tojson }},
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        //{type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine: {
+                    data: [
+                        {type: 'average', name: '平均值'}
+                    ]
+                }
+            },
+            {
+                name: 'GPU-8',
+                type: 'line',
+                data: {{ data.y_list_8|tojson }},
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        //{type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine: {
+                    data: [
+                        {type: 'average', name: '平均值'}
+                    ]
+                }
+            },
+            {
+                name: 'GPU-all',
+                type: 'line',
+                data: {{ data.y_list_all|tojson }},
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        //{type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine: {
+                    data: [
+                        {type: 'average', name: '平均值'}
+                    ]
+                },
+                lineStyle: {
+                    width: 4 //default value:2
                 }
             },
         ]

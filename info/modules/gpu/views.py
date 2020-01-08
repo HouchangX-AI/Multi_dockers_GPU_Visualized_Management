@@ -5,7 +5,8 @@ from info.modules.gpu import gpu_blu
 
 @gpu_blu.route('/rate')
 def rate():
-    with open('../../../utils/rate.txt', 'r') as f:
+
+    with open('/home/dc2-user/Multi_dockers_GPU_Visualized_Management/utils/rate.txt', 'r') as f:
         rate_dict = eval(f.read())
 
     x_list = []
@@ -20,7 +21,7 @@ def rate():
         y_list_6.append(v.get('rate_6'))
         y_list_7.append(v.get('rate_7'))
         y_list_8.append(v.get('rate_8'))
-        y_list_all.append(v.get('rate_all'))
+        y_list_all.append(v.get('all_mem_used_rate'))
     data = {
         'x_list': x_list,
         'y_list_1': y_list_1,
