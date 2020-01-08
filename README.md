@@ -32,6 +32,7 @@ Make some work for managing GPU server in order to save time.
 * Compute M.：计算模式
 
 需要注意的一点是显存占用率和GPU占用率是两个不一样的东西，类似于内存和CPU，两个指标的占用率不一定是互相对应的。
+> 首页中直接显示GPU使用情况，方便查看
 
 ### docker stats监控容器资源消耗
 
