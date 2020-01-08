@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>GPU使用率</title>
+    <script src='../static/echarts.min.js'></script>
+</head>
+
+<body>
+
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main2" style="width: 1600px;height:500px;margin: 0 auto;"></div>
+
+
+<script type="text/javascript">
+
+    // 基于准备好的dom，初始化echarts实例
+    var myChart2 = echarts.init(document.getElementById('main2'));
+
+
+    var option2 = {
+        title: {
+            text: 'GPU使用率统计',
+            subtext: '以系统填写信息结算'
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data: ['GPU-1', 'GPU-2', 'GPU-3', 'GPU-4', 'GPU-5', 'GPU-6', 'GPU-7', 'GPU-8', 'GPU4-all']
+        },
+        toolbox: {
+            show: true,
+            feature: {
+                mark: {show: true},
+                dataView: {show: true, readOnly: false},
+                magicType: {show: true, type: ['line', 'bar']},
+                restore: {show: true},
+                saveAsImage: {show: true}
+            }
+        },
+        calculable: true,
+        xAxis: [
+            {
+                type: 'category',
+                boundaryGap: false,
+                data: ['6日', '7日', '8日', '9日', '10日', '11日', '12日', '13日', '14日', '15日', '16日', '17日', '18日',
+                    '19日', '20日', '21日', '22日', '23日', '24日', '25日', '26日', '27日', '28日', '29日', '30日']
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                axisLabel: {
+                    formatter: '{value} '
+                }
+            }
+        ],
+        series: [
+            {
+                name: '无人机课程',
+                type: 'line',
+                data: {{ data.air1_y_value_list }},
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        //{type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine: {
+                    data: [
+                        {type: 'average', name: '平均值'}
+                    ]
+                }
+            },
+            {
+                name: 'AI基础课程',
+                type: 'line',
+                data: {{ data.py1_y_value_list }},
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        //{type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine: {
+                    data: [
+                        {type: 'average', name: '平均值'}
+                    ]
+                }
+            },
+            {
+                name: 'AI进阶课程',
+                type: 'line',
+                data: {{ data.ai5_y_value_list }},
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        //{type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine: {
+                    data: [
+                        {type: 'average', name: '平均值'}
+                    ]
+                }
+            },
+            {
+                name: 'AI资深课程',
+                type: 'line',
+                data: {{ data.hc_y_value_list }},
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        //{type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine: {
+                    data: [
+                        {type: 'average', name: '平均值'}
+                    ]
+                }
+            },
+        ]
+    };
+
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart2.setOption(option2);
+</script>
+</body>
+</html>
