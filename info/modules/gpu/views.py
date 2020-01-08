@@ -23,16 +23,16 @@ def rate():
         y_list_8.append(v.get('rate_8'))
         y_list_all.append(v.get('all_mem_used_rate'))
     data = {
-        'x_list': x_list,
-        'y_list_1': y_list_1,
-        'y_list_2': y_list_2,
-        'y_list_3': y_list_3,
-        'y_list_4': y_list_4,
-        'y_list_5': y_list_5,
-        'y_list_6': y_list_6,
-        'y_list_7': y_list_7,
-        'y_list_8': y_list_8,
-        'y_list_all': y_list_all,
+        'x_list': x_list[::-1],
+        'y_list_1': y_list_1[::-1],
+        'y_list_2': y_list_2[::-1],
+        'y_list_3': y_list_3[::-1],
+        'y_list_4': y_list_4[::-1],
+        'y_list_5': y_list_5[::-1],
+        'y_list_6': y_list_6[::-1],
+        'y_list_7': y_list_7[::-1],
+        'y_list_8': y_list_8[::-1],
+        'y_list_all': y_list_all[::-1],
     }
 
     return render_template('gpu_rate.html', data=data)
