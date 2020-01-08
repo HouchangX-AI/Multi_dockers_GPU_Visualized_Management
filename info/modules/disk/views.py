@@ -10,20 +10,16 @@ from info.modules.disk import disk_blu
 def detail():
     # 获取服务器上面的磁盘数据 df -h
     terminal = 'docker system df -v'
-    # print(terminal)
     result = os.popen(terminal).read().strip()
-    # print(result)
     a = r'Containers space usage:([\w\W]*)Local Volumes space usage:'
     info = re.findall(a, result)
     info_list = info[0].split('\n')
     info_list = [i for i in info_list if i != '']
-    # print(info_list)
 
     detail_list = []
 
     for i in range(1, len(info_list)):
         p = [i for i in info_list[i].split(' ') if i != '']
-        # print(p)
         if p[1] == 'houchang:base':
             p_dict = {
                 'container_id': p[0],
@@ -55,8 +51,8 @@ def size2num(size):
     if 'kB' in size:
         return float(size[:-2])
     elif 'MB' in size:
-        return float(size[:-2])*1024
+        return float(size[:-2]) * 1024
     elif 'GB' in size:
-        return float(size[:-2])*1024*1024
+        return float(size[:-2]) * 1024 * 1024
     else:
         return 0
