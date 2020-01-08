@@ -16,6 +16,7 @@ Make some work for managing GPU server in order to save time.
 > 指令：nvidia-smi
 
 ![GPU使用情况](https://uploader.shimo.im/f/dkdABgc8FHUuEzxu.png)
+![tu](info/static/gpu.png)
 #### 参数解释：
 表格中会显示显卡的一些信息，第一行是版本信息，第二行是标题栏，第三行就是具体的显卡信息了，如果有多个显卡，会有多行，每一行的信息值对应标题栏对应位置的信息。 
 * GPU：编号，显示多卡的编号
@@ -50,5 +51,5 @@ Make some work for managing GPU server in order to save time.
 
 只返回当前的状态:如果不想持续的监控容器使用资源的情况，可以通过 --no-stream 选项只输出当前的状态：
 > docker stats --no-stream
-
+增加接口显示
 
