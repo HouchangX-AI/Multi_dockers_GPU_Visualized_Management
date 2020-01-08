@@ -52,3 +52,14 @@ Make some work for managing GPU server in order to save time.
 > docker stats --no-stream
 增加接口显示
 
+
+### 查看docker镜像磁盘占用情况
+
+> docker system df
+- 查看磁盘占用情况的命令
+
+> docker system df  -v
+
+- 如果想查看 具体每个docker image 或者是container的占用量 可以使用 增加 -v or --verbose 进行详细显示
+
+> 增加详情页显示接口，显示对应磁盘所有docker的使用情况
