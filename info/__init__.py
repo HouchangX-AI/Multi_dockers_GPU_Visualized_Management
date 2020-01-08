@@ -87,4 +87,7 @@ def create_app(config_name):
     from info.modules.disk import disk_blu
     app.register_blueprint(disk_blu)
 
+    from info.modules.gpu import gpu_blu
+    app.register_blueprint(gpu_blu)
+
     return app
