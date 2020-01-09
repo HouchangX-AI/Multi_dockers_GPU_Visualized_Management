@@ -4,10 +4,28 @@
     <meta charset="utf-8">
     <title>GPU使用率</title>
     <script src='../static/echarts.min.js'></script>
+    <link rel="stylesheet" href="../static/layui/css/layui.css" media="all">
+
 </head>
 
 <body>
-
+<ul class="layui-nav layui-bg-blue">
+    <li style="width: 180px;padding-right: 3em" class="layui-nav-item"><a href="/"><img style="width: 90%; "
+                                                                                        src="../static/hc_logo.png"
+                                                                                        alt=""></a></li>
+    <li class="layui-nav-item"><a href="/source_ctrl">用户使用情况</a></li>
+    {#    <li class="layui-nav-item layui-this"><a href="">大数据</a></li>#}
+    {#    <li class="layui-nav-item">#}
+    {#        <a href="javascript:;">解决方案</a>#}
+    {#        <dl class="layui-nav-child">#}
+    {#            <dd><a href="">移动模块</a></dd>#}
+    {#            <dd><a href="">后台模版</a></dd>#}
+    {#            <dd><a href="">电商平台</a></dd>#}
+    {#        </dl>#}
+    {#    </li>#}
+    <li class="layui-nav-item"><a href="/disk/detail_info">磁盘使用详情</a></li>
+    <li class="layui-nav-item"><a href="/gpu/rate">gpu使用统计</a></li>
+</ul>
 <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
 <div id="main2" style="width: 1600px;height:700px;margin: 0 auto;"></div>
 

@@ -8,7 +8,10 @@ def rate():
     with open('/home/dc2-user/Multi_dockers_GPU_Visualized_Management/utils/rate.txt', 'r') as f:
         rate_dict = eval(f.read())
     # 对取到的字典根据键的时间进行排序
-    rate_dict = sorted(rate_dict.items, key=lambda x: x[0])
+    rate_list = sorted(rate_dict.items(), key=lambda x: x[0], reverse=False)
+    # print(rate_list)
+    rate_dict = {i[0]: i[1] for i in rate_list}
+    # print(rate_dict)
     x_list = []
     y_list_1, y_list_2, y_list_3, y_list_4, y_list_5, y_list_6, y_list_7, y_list_8, y_list_all = [], [], [], [], [], [], [], [], []
     for k, v in rate_dict.items():
