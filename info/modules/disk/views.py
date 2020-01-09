@@ -13,6 +13,7 @@ def detail():
     result = os.popen(terminal).read().strip()
     a = r'Containers space usage:([\w\W]*)Local Volumes space usage:'
     info = re.findall(a, result)
+    # print(info)
     info_list = info[0].split('\n')
     info_list = [i for i in info_list if i != '']
 
