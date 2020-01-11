@@ -1,12 +1,14 @@
 from flask import render_template
 
 from info.modules.gpu import gpu_blu
+from utils.gen_gpu_info import gen_gpu_list
 
 
 @gpu_blu.route('/rate')
 def rate():
-    with open('/home/dc2-user/Multi_dockers_GPU_Visualized_Management/utils/rate.txt', 'r') as f:
-        rate_dict = eval(f.read())
+    rate_dict = gen_gpu_list()
+    # with open('/home/dc2-user/Multi_dockers_GPU_Visualized_Management/utils/rate.txt', 'r') as f:
+    #     rate_dict = eval(f.read())
     # 对取到的字典根据键的时间进行排序
     rate_list = sorted(rate_dict.items(), key=lambda x: x[0], reverse=False)
     # print(rate_list)

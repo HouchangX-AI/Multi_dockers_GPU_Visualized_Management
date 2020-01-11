@@ -80,7 +80,8 @@
                 data: {{ data.y_list_1|tojson }},
                 markPoint: {
                     data: [
-                        {type: 'max', name: '最大值'},
+                        {#{type: 'max', name: '最大值'},#}
+                        {type: 'average', name: '平均值'},
                         //{type : 'min', name: '最小值'}
                     ]
                 },
