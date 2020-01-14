@@ -7,17 +7,19 @@
 </head>
 <body>
 <ul class="layui-nav layui-bg-blue">
-    <li style="width: 180px;padding-right: 3em" class="layui-nav-item"><a href="/"><img style="width: 90%; " src="../static/hc_logo.png" alt=""></a></li>
+    <li style="width: 180px;padding-right: 3em" class="layui-nav-item"><a href="/"><img style="width: 90%; "
+                                                                                        src="../static/hc_logo.png"
+                                                                                        alt=""></a></li>
     <li class="layui-nav-item"><a href="/source_ctrl">用户使用情况</a></li>
-{#    <li class="layui-nav-item layui-this"><a href="">大数据</a></li>#}
-{#    <li class="layui-nav-item">#}
-{#        <a href="javascript:;">解决方案</a>#}
-{#        <dl class="layui-nav-child">#}
-{#            <dd><a href="">移动模块</a></dd>#}
-{#            <dd><a href="">后台模版</a></dd>#}
-{#            <dd><a href="">电商平台</a></dd>#}
-{#        </dl>#}
-{#    </li>#}
+    {#    <li class="layui-nav-item layui-this"><a href="">大数据</a></li>#}
+    {#    <li class="layui-nav-item">#}
+    {#        <a href="javascript:;">解决方案</a>#}
+    {#        <dl class="layui-nav-child">#}
+    {#            <dd><a href="">移动模块</a></dd>#}
+    {#            <dd><a href="">后台模版</a></dd>#}
+    {#            <dd><a href="">电商平台</a></dd>#}
+    {#        </dl>#}
+    {#    </li>#}
     <li class="layui-nav-item"><a href="/disk/detail_info">磁盘使用详情</a></li>
     <li class="layui-nav-item"><a href="/gpu/rate">gpu使用统计</a></li>
 </ul>
@@ -46,12 +48,11 @@
 
         table.render({
             elem: '#test'
-            ,
-            url: '/disk/detail'
-            ,
-            cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
-            ,
-            cols: [[
+            , url: '/disk/detail'
+            , toolbar: true //开启导出工具
+            , defaultToolbar: ['filter', 'print', 'exports']
+            , cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            , cols: [[
                 {field: 'container_id', title: '容器ID'}
                 , {field: 'image', title: '镜像name'}
                 , {field: 'command', title: '命令'}
@@ -65,6 +66,15 @@
         });
     });
 </script>
+{#<script>#}
+{#    //注意：导航 依赖 element 模块，否则无法进行功能性操作#}
+{#    layui.use('element', function () {#}
+{#        var element = layui.element;#}
+{##}
+{#        //…#}
+{#    });#}
+{##}
+{#</script>#}
 </body>
 </html>
 
